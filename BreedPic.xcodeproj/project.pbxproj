@@ -233,7 +233,6 @@
 				489376F92075A47500FAC527 /* Frameworks */,
 				489376FA2075A47500FAC527 /* Resources */,
 				F33781213313D1BDEE2D91A9 /* [CP] Embed Pods Frameworks */,
-				988B6D6A23B7E35CD0A17A71 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -252,8 +251,6 @@
 				4893770E2075A47600FAC527 /* Sources */,
 				4893770F2075A47600FAC527 /* Frameworks */,
 				489377102075A47600FAC527 /* Resources */,
-				CD577D1B8162BFCB0ECBD1AD /* [CP] Embed Pods Frameworks */,
-				45C5F981C40FC67A2AC632C3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -330,51 +327,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		45C5F981C40FC67A2AC632C3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BreedPicTests/Pods-BreedPicTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		988B6D6A23B7E35CD0A17A71 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BreedPic/Pods-BreedPic-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CD577D1B8162BFCB0ECBD1AD /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BreedPicTests/Pods-BreedPicTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D4C9E07FFF8C3B817080C48B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -610,10 +562,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PEDVQ936L6;
 				INFOPLIST_FILE = BreedPic/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.edc0der.BreedPic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -629,10 +578,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PEDVQ936L6;
 				INFOPLIST_FILE = BreedPic/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.edc0der.BreedPic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -649,11 +595,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PEDVQ936L6;
 				INFOPLIST_FILE = BreedPicTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.edc0der.BreedPicTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -671,11 +613,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PEDVQ936L6;
 				INFOPLIST_FILE = BreedPicTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.edc0der.BreedPicTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
