@@ -16,8 +16,12 @@ class LaunchAnimationVC: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let sboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let vc = sboard.instantiateViewController(withIdentifier: "MainTabBarVC")
+//        let sboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//        let vc = sboard.instantiateViewController(withIdentifier: "MainNavigation")
+//        let window = UIApplication.shared.keyWindow ?? UIWindow(frame: UIScreen.main.bounds)
+//        window.rootViewController = vc
+
+        let vc = OnboardingVC(nibName: "OnboardingVC", bundle: nil)
         let window = UIApplication.shared.keyWindow ?? UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = vc
     }

@@ -13,11 +13,11 @@ class Breed {
     var name: String {
         didSet {
             if let data = name.data(using: .utf8) {
-                id = data.base64EncodedString(options: .init(rawValue: 0))
+                id = data.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
             }
         }
     }
-    var urlString: String?
+    var imagesURLs = [String]()
     var subBreeds: [Breed]?
 
     init(name: String) {
