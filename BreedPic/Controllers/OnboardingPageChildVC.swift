@@ -9,7 +9,7 @@
 import UIKit
 
 enum PageType: Int8 {
-    case howItWorks = 0, breedSelection
+    case sections = 0, controls, breedSelection
 }
 
 class OnboardingPageChildVC: UIViewController {
@@ -24,19 +24,25 @@ class OnboardingPageChildVC: UIViewController {
     }
 
     func prepareSubView(type: PageType) -> Void {
-        switch type {
-        case .howItWorks:
-            let subView = OnboardingPageOneVW()
+        var viewForType: UIView?
 
+        switch type {
+        case .sections, .controls:
+            let vwFeature = OnboardingFeaturePageVW()
+            vwFeature.prepare(type: type)
+            viewForType = vwFeature
+        default:
+            break
+        }
+
+        if let subView = viewForType {
             subView.translatesAutoresizingMaskIntoConstraints = false
             vwContent.addSubview(subView)
-
+            
             let lcLeft = NSLayoutConstraint(item: subView, attribute: .left, relatedBy: .equal, toItem: vwContent, attribute: .left, multiplier: 1.0, constant: 0.0)
             let lcRight = NSLayoutConstraint(item: subView, attribute: .right, relatedBy: .equal, toItem: vwContent, attribute: .right, multiplier: 1.0, constant: 0.0)
             let lcVertical = NSLayoutConstraint(item: subView, attribute: .centerY, relatedBy: .equal, toItem: vwContent, attribute: .centerY, multiplier: 1.0, constant: 0.0)
             vwContent.addConstraints([lcLeft, lcRight, lcVertical])
-        default:
-            break
         }
     }
 }

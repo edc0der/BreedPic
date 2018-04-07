@@ -25,10 +25,14 @@ class OnboardingPVC: UIViewController {
         addChildViewController(pageController)
         view.addSubview(pageController.view)
         pageController.didMove(toParentViewController: self)
+
+        let pageControl = UIPageControl.appearance(whenContainedInInstancesOf: [UIPageViewController.self])
+        pageControl.currentPageIndicatorTintColor = UIColor.black
+        pageControl.pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.2)
     }
 
     func viewControllerAtIndex(_ index: Int8) -> OnboardingPageChildVC {
-        let childVC = OnboardingPageChildVC(nibName: "OnboardingPageChildVC", bundle: nil)
+        let childVC = OnboardingPageChildVC(nibName: className(target: OnboardingPageChildVC.self), bundle: nil)
         childVC.index = index
         return childVC
     }

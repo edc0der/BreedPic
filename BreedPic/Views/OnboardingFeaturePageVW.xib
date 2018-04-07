@@ -10,14 +10,17 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnboardingPageOneVW" customModule="BreedPic" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnboardingFeaturePageVW" customModule="BreedPic" customModuleProvider="target">
             <connections>
-                <outlet property="lblFavoritesDescription" destination="Jn0-6N-lBF" id="Aci-Iu-8qF"/>
-                <outlet property="lblFavoritesTitle" destination="iLJ-H7-0Ea" id="NsB-CY-L5J"/>
-                <outlet property="lblFeedDescription" destination="g7y-Cl-UG9" id="bat-1r-Hbu"/>
-                <outlet property="lblFeedTitle" destination="5Z7-Uz-501" id="4lR-aW-oWT"/>
-                <outlet property="lblSettingsDescription" destination="Gvd-Zt-mzx" id="TH7-pt-kQe"/>
-                <outlet property="lblSettingsTitle" destination="8oD-Fb-pZN" id="pcE-Xf-Jyr"/>
+                <outlet property="imgFirst" destination="MBl-Gx-4W9" id="HsA-QT-j4c"/>
+                <outlet property="imgSecond" destination="uLE-Bp-J25" id="Pdd-Gh-9R4"/>
+                <outlet property="imgThird" destination="V4x-Oz-M7r" id="qvs-vH-Dta"/>
+                <outlet property="lblFirstDescription" destination="g7y-Cl-UG9" id="aIF-Uj-q2r"/>
+                <outlet property="lblFirstTitle" destination="5Z7-Uz-501" id="csb-W4-FxO"/>
+                <outlet property="lblSecondDescription" destination="Jn0-6N-lBF" id="OvP-mL-CNN"/>
+                <outlet property="lblSecondTitle" destination="iLJ-H7-0Ea" id="J3y-ba-rHt"/>
+                <outlet property="lblThirdDescription" destination="Gvd-Zt-mzx" id="qEG-K3-aIE"/>
+                <outlet property="lblThirdTitle" destination="8oD-Fb-pZN" id="Iqb-k8-vnv"/>
                 <outlet property="lblTitle" destination="dgg-qg-AOV" id="tOI-hB-xNv"/>
                 <outlet property="vwContent" destination="iN0-l3-epB" id="RNz-LQ-8kl"/>
             </connections>
@@ -33,7 +36,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0e-0K-Oky" userLabel="Feed Description View">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l0e-0K-Oky" userLabel="First Description View">
                     <rect key="frame" x="0.0" y="82.5" width="375" height="59"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="MBl-Gx-4W9">
@@ -72,7 +75,7 @@
                         <constraint firstItem="5Z7-Uz-501" firstAttribute="leading" secondItem="MBl-Gx-4W9" secondAttribute="trailing" constant="16" id="r1p-eW-eNs"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uy9-g0-Dww" userLabel="Favorites Description View">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uy9-g0-Dww" userLabel="Second Description View">
                     <rect key="frame" x="0.0" y="157.5" width="375" height="59"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tickBox" translatesAutoresizingMaskIntoConstraints="NO" id="uLE-Bp-J25">
@@ -111,7 +114,7 @@
                         <constraint firstItem="uLE-Bp-J25" firstAttribute="leading" secondItem="uy9-g0-Dww" secondAttribute="leading" id="igO-S2-wdb"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O9v-1P-1AZ" userLabel="Settings Description View">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O9v-1P-1AZ" userLabel="Third Description View">
                     <rect key="frame" x="0.0" y="232.5" width="375" height="59"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings" translatesAutoresizingMaskIntoConstraints="NO" id="V4x-Oz-M7r">
@@ -169,8 +172,9 @@
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="104.5" y="-134"/>
+            <point key="canvasLocation" x="91.5" y="-310"/>
         </view>
     </objects>
     <resources>

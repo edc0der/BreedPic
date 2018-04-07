@@ -13,13 +13,13 @@ class MainTabBarVC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let vcFavoriteCategories = FavoriteCategoriesVC(nibName: "FavoriteCategoriesVC", bundle: nil)
-        let vcFavoritePictures = FavoritePicturesVC(nibName: "FavoritePicturesVC", bundle: nil)
-        let vcSettings = SettingsVC(nibName: "SettingsVC", bundle: nil)
+        let vcFavoriteCategories = FavoriteCategoriesVC(nibName: className(target: FavoriteCategoriesVC.self), bundle: nil)
+        let vcFavoritePictures = FavoritePicturesVC(nibName: className(target: FavoritePicturesVC.self), bundle: nil)
+        let vcSettings = SettingsVC(nibName: className(target: SettingsVC.self), bundle: nil)
 
-        vcFavoriteCategories.tabBarItem = UITabBarItem(title: "Feed", image: #imageLiteral(resourceName: "search"), tag: 0)
-        vcFavoritePictures.tabBarItem = UITabBarItem(title: "Favorites", image: #imageLiteral(resourceName: "tickBox"), tag: 1)
-        vcSettings.tabBarItem = UITabBarItem(title: "Settings", image: #imageLiteral(resourceName: "settings"), tag: 2)
+        vcFavoriteCategories.tabBarItem = UITabBarItem(title: .feedItem, image: #imageLiteral(resourceName: "search"), tag: 0)
+        vcFavoritePictures.tabBarItem = UITabBarItem(title: .favoritesItem, image: #imageLiteral(resourceName: "tickBox"), tag: 1)
+        vcSettings.tabBarItem = UITabBarItem(title: .settingsItem, image: #imageLiteral(resourceName: "settings"), tag: 2)
 
         viewControllers = [vcFavoriteCategories, vcFavoritePictures, vcSettings]
     }

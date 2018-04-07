@@ -1,5 +1,5 @@
 //
-//  OnboardingPageTwoVW.swift
+//  OnboardingBreedSelectionPageVW.swift
 //  BreedPic
 //
 //  Created by Eduard Moya on 4/5/18.
@@ -8,6 +8,6 @@
 
 import UIKit
 
-class OnboardingPageTwoVW: UIView {
+class OnboardingBreedSelectionPageVW: UIView {
 
 }

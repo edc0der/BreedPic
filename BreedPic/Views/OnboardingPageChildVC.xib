@@ -22,35 +22,16 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewC-Ug-XeO" userLabel="Container View">
-                    <rect key="frame" x="32" y="44" width="311" height="674"/>
+                    <rect key="frame" x="32" y="44" width="311" height="734"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9X-u7-rLC">
-                    <rect key="frame" x="32" y="718" width="311" height="44"/>
-                    <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="lzU-dG-aRJ"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                    <state key="normal" title="Next">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="10"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="ewC-Ug-XeO" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="0IE-iV-hha"/>
-                <constraint firstItem="ewC-Ug-XeO" firstAttribute="trailing" secondItem="a9X-u7-rLC" secondAttribute="trailing" id="Mcm-gB-tp5"/>
-                <constraint firstItem="ewC-Ug-XeO" firstAttribute="leading" secondItem="a9X-u7-rLC" secondAttribute="leading" id="RFt-xg-NDt"/>
-                <constraint firstItem="a9X-u7-rLC" firstAttribute="top" secondItem="ewC-Ug-XeO" secondAttribute="bottom" id="Tzu-ib-QrB"/>
-                <constraint firstItem="a9X-u7-rLC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="h1a-c8-OqZ"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="a9X-u7-rLC" secondAttribute="bottom" constant="16" id="pem-OZ-TuB"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="a9X-u7-rLC" secondAttribute="trailing" constant="32" id="zl9-fK-1fT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ewC-Ug-XeO" secondAttribute="bottom" id="14Y-Mh-t7y"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ewC-Ug-XeO" secondAttribute="trailing" constant="32" id="GfJ-7W-j4A"/>
+                <constraint firstItem="ewC-Ug-XeO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="32" id="o2K-0J-qtB"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="109.5" y="54"/>
