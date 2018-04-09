@@ -1,5 +1,5 @@
 //
-//  ClassName.swift
+//  Generics+Utilities.swift
 //  BreedPic
 //
 //  Created by Eduard Moya on 4/6/18.
@@ -14,4 +14,12 @@ func className(target: AnyObject) -> String {
         return className
     }
     return ""
+}
+
+func randomizeArray<T>(_ arr: inout Array<T>) -> Void {
+    let maxIndex = arr.count - 1
+
+    for i in 0...maxIndex {
+        arr.swapAt(i, Int(arc4random_uniform(UInt32(arr.count))))
+    }
 }
