@@ -8,9 +8,9 @@
 
 import Foundation
 
-class Breed {
+class Breed: Codable {
     var id: String? //self generated
-    var name: String {
+    var name: String = "" {
         didSet {
             if let data = name.data(using: .utf8) {
                 id = data.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
@@ -23,4 +23,9 @@ class Breed {
     init(name: String) {
         self.name = name
     }
+}
+
+struct BaseJsonStruct<T : Codable>: Codable {
+    let status: String?
+    let message: T?
 }

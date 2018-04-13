@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="292"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="How it works" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTH-ig-gan">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="50.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="42"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QMN-EK-63N">
+                    <rect key="frame" x="0.0" y="66.5" width="375" height="225.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fTH-ig-gan" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="NI7-4B-PlF"/>
+                <constraint firstItem="QMN-EK-63N" firstAttribute="top" secondItem="fTH-ig-gan" secondAttribute="bottom" constant="16" id="cpZ-UG-BiB"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="QMN-EK-63N" secondAttribute="trailing" id="luP-Mx-GML"/>
+                <constraint firstItem="QMN-EK-63N" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="s2p-cN-gCV"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="QMN-EK-63N" secondAttribute="bottom" id="sjz-3g-Qfp"/>
+                <constraint firstItem="fTH-ig-gan" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="uxH-ux-OPQ"/>
+                <constraint firstItem="fTH-ig-gan" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="val-YX-zcE"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="85.5" y="-45"/>
+        </view>
+    </objects>
+</document>

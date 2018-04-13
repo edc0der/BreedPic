@@ -16,7 +16,7 @@ class OnboardingPageChildVC: UIViewController {
 
     var index: Int8 = -1
 
-    @IBOutlet weak var vwContent: UIView!
+    @IBOutlet private weak var vwContent: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

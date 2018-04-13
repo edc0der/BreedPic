@@ -8,21 +8,77 @@
 
 import UIKit
 
+class OnboardingFeaturePageVWViewModel: NSObject {
+
+    var title: String?
+    var items = [OnboardingInfoPageTVCViewModel]()
+
+    init(items: [[String : Any]]) {
+        for item in items {
+            self.items.append(OnboardingInfoPageTVCViewModel(item: item))
+        }
+    }
+
+    //change this to request if backend setup
+    func loadItems(type: PageType) -> Void {
+        switch type {
+        case .sections:
+            title = .howItWorks
+            items = [
+                OnboardingInfoPageTVCViewModel.init(item: ["imageName" : #imageLiteral(resourceName: "search"),
+                                                           "title" : String.feedTab,
+                                                           "description" : String.feedDescription]),
+                OnboardingInfoPageTVCViewModel.init(item: ["imageName" : #imageLiteral(resourceName: "tickBox"),
+                                                           "title" : String.favoritesTab,
+                                                           "description" : String.favoritesDescription]),
+                OnboardingInfoPageTVCViewModel.init(item: ["imageName" : #imageLiteral(resourceName: "settings"),
+                                                           "title" : String.settingsTab,
+                                                           "description" : String.settingsDescription])]
+            break
+        case .controls:
+            title = .whatToDo
+            items = [
+                OnboardingInfoPageTVCViewModel.init(item: ["imageName" : #imageLiteral(resourceName: "tickBoxFilled"),
+                                                           "title" : String.favIt,
+                                                           "description" : String.favItDescription]),
+                OnboardingInfoPageTVCViewModel.init(item: ["imageName" : #imageLiteral(resourceName: "download"),
+                                                           "title" : String.downloadIt,
+                                                           "description" : String.downloadItDescription]),
+                OnboardingInfoPageTVCViewModel.init(item: ["imageName" : #imageLiteral(resourceName: "share"),
+                                                           "title" : String.shareIt,
+                                                           "description" : String.shareItDescription])]
+            break
+        default:
+            title = nil
+            items = [
+                OnboardingInfoPageTVCViewModel.init(item: ["title" : "",
+                                                           "description" : ""]),
+                OnboardingInfoPageTVCViewModel.init(item: ["title" : "",
+                                                           "description" : ""]),
+                OnboardingInfoPageTVCViewModel.init(item: ["title" : "",
+                                                           "description" : ""])]
+            break
+        }
+    }
+}
+
 class OnboardingFeaturePageVW: UIView {
-    @IBOutlet var vwContent: UIView!
-    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet private var vwContent: UIView!
+    @IBOutlet private weak var lblTitle: UILabel!
 
-    @IBOutlet weak var imgFirst: UIImageView!
-    @IBOutlet weak var lblFirstTitle: UILabel!
-    @IBOutlet weak var lblFirstDescription: UILabel!
+    @IBOutlet private weak var imgFirst: UIImageView!
+    @IBOutlet private weak var lblFirstTitle: UILabel!
+    @IBOutlet private weak var lblFirstDescription: UILabel!
 
-    @IBOutlet weak var imgSecond: UIImageView!
-    @IBOutlet weak var lblSecondTitle: UILabel!
-    @IBOutlet weak var lblSecondDescription: UILabel!
+    @IBOutlet private weak var imgSecond: UIImageView!
+    @IBOutlet private weak var lblSecondTitle: UILabel!
+    @IBOutlet private weak var lblSecondDescription: UILabel!
 
-    @IBOutlet weak var imgThird: UIImageView!
-    @IBOutlet weak var lblThirdTitle: UILabel!
-    @IBOutlet weak var lblThirdDescription: UILabel!
+    @IBOutlet private weak var imgThird: UIImageView!
+    @IBOutlet private weak var lblThirdTitle: UILabel!
+    @IBOutlet private weak var lblThirdDescription: UILabel!
+
+    var viewModel: OnboardingFeaturePageVWViewModel?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -43,52 +99,6 @@ class OnboardingFeaturePageVW: UIView {
     }
 
     func prepare(type: PageType) -> Void {
-        switch type {
-            case .sections:
-                lblTitle.text = .howItWorks
 
-                imgFirst.image = #imageLiteral(resourceName: "search")
-                lblFirstTitle.text = .feedTab
-                lblFirstDescription.text = .feedDescription
-
-                imgSecond.image = #imageLiteral(resourceName: "tickBox")
-                lblSecondTitle.text = .favoritesTab
-                lblSecondDescription.text = .favoritesDescription
-
-                imgThird.image = #imageLiteral(resourceName: "settings")
-                lblThirdTitle.text = .settingsTab
-                lblThirdDescription.text = .settingsDescription
-                break
-            case .controls:
-                lblTitle.text = .whatToDo
-
-                imgFirst.image = #imageLiteral(resourceName: "tickBoxFilled")
-                lblFirstTitle.text = .favIt
-                lblFirstDescription.text = .favItDescription
-
-                imgSecond.image = #imageLiteral(resourceName: "download")
-                lblSecondTitle.text = .downloadIt
-                lblSecondDescription.text = .downloadItDescription
-
-                imgThird.image = #imageLiteral(resourceName: "share")
-                lblThirdTitle.text = .shareIt
-                lblThirdDescription.text = .shareItDescription
-                break
-            default:
-                lblTitle.text = ""
-
-                imgFirst.image = nil
-                lblFirstTitle.text = ""
-                lblFirstDescription.text = ""
-
-                imgSecond.image = nil
-                lblSecondTitle.text = ""
-                lblSecondDescription.text = ""
-
-                imgThird.image = nil
-                lblThirdTitle.text = ""
-                lblThirdDescription.text = ""
-                break
-        }
     }
 }

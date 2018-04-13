@@ -11,10 +11,11 @@ import UIKit
 class OnboardingPVC: UIViewController {
 
     var pageController: UIPageViewController!
-    let pagesCount = 2
+    let pagesCount = 3
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         pageController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         pageController.delegate = self
         pageController.dataSource = self
@@ -29,6 +30,7 @@ class OnboardingPVC: UIViewController {
         let pageControl = UIPageControl.appearance(whenContainedInInstancesOf: [UIPageViewController.self])
         pageControl.currentPageIndicatorTintColor = UIColor.black
         pageControl.pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.2)
+        pageControl.numberOfPages = pagesCount - 1
     }
 
     func viewControllerAtIndex(_ index: Int8) -> OnboardingPageChildVC {
@@ -55,7 +57,16 @@ extension OnboardingPVC: UIPageViewControllerDataSource {
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let viewController = viewController as? OnboardingPageChildVC, viewController.index < (pagesCount - 1) else { return nil }
+        guard let viewController = viewController as? OnboardingPageChildVC else { return nil }
+        
+        if viewController.index == (pagesCount - 1) {
+            let sboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let vc = sboard.instantiateViewController(withIdentifier: "MainNavigation")
+//            let vc = MainTabBarVC(nibName: className(target: MainTabBarVC.self), bundle: nil)
+            let window = UIApplication.shared.keyWindow ?? UIWindow(frame: UIScreen.main.bounds)
+            window.rootViewController = vc
+            return nil
+        }
         return viewControllerAtIndex(viewController.index + 1)
     }
 }

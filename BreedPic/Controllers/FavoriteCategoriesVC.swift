@@ -10,7 +10,7 @@ import UIKit
 
 class FavoriteCategoriesVC: UIViewController {
 
-    @IBOutlet weak var tvPictures: UITableView!
+    @IBOutlet private weak var tvPictures: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
