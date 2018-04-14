@@ -28,8 +28,8 @@ class OnboardingPageChildVC: UIViewController {
 
         switch type {
         case .sections, .controls:
-            let vwFeature = OnboardingFeaturePageVW()
-            vwFeature.prepare(type: type)
+            let vwFeature = OnboardingInfoPageVW()
+            vwFeature.pageType = type
             viewForType = vwFeature
         default:
             break

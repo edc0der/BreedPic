@@ -62,7 +62,6 @@ extension OnboardingPVC: UIPageViewControllerDataSource {
         if viewController.index == (pagesCount - 1) {
             let sboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             let vc = sboard.instantiateViewController(withIdentifier: "MainNavigation")
-//            let vc = MainTabBarVC(nibName: className(target: MainTabBarVC.self), bundle: nil)
             let window = UIApplication.shared.keyWindow ?? UIWindow(frame: UIScreen.main.bounds)
             window.rootViewController = vc
             return nil

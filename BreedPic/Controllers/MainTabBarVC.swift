@@ -13,7 +13,6 @@ class MainTabBarVC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        APIClient().getUser(amount: 1)
         let vcFavoriteCategories = FavoriteCategoriesVC(nibName: className(target: FavoriteCategoriesVC.self), bundle: nil)
         let vcFavoritePictures = FavoritePicturesVC(nibName: className(target: FavoritePicturesVC.self), bundle: nil)
         let vcSettings = SettingsVC(nibName: className(target: SettingsVC.self), bundle: nil)
