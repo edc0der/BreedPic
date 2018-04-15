@@ -17,6 +17,7 @@
 		484F410520803920005169A3 /* OnboardingInfoPageTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484F410320803920005169A3 /* OnboardingInfoPageTVC.swift */; };
 		484F410620803920005169A3 /* OnboardingInfoPageTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 484F410420803920005169A3 /* OnboardingInfoPageTVC.xib */; };
 		484F41082080394C005169A3 /* OnboardingInfoPageVW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484F41072080394C005169A3 /* OnboardingInfoPageVW.swift */; };
+		4866ABA02083EB8F00D9E3AF /* UIViewController+MakeRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4866AB9F2083EB8F00D9E3AF /* UIViewController+MakeRoot.swift */; };
 		489005672081AFAB0016F607 /* OnboardingInfoPageVWViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489005662081AFAB0016F607 /* OnboardingInfoPageVWViewModel.swift */; };
 		489005692081AFF00016F607 /* OnboardingInfoPageTVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489005682081AFF00016F607 /* OnboardingInfoPageTVCViewModel.swift */; };
 		489377002075A47500FAC527 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489376FF2075A47500FAC527 /* AppDelegate.swift */; };
@@ -39,6 +40,7 @@
 		48D7096A2075C88C00A8C29C /* OnboardingPageChildVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D709682075C88C00A8C29C /* OnboardingPageChildVC.swift */; };
 		48D7096E2075D36D00A8C29C /* OnboardingPVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D7096C2075D36D00A8C29C /* OnboardingPVC.swift */; };
 		48D7096F2075D36D00A8C29C /* OnboardingPageChildVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D7096D2075D36D00A8C29C /* OnboardingPageChildVC.xib */; };
+		48D795AC2083A9B90000D7C3 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D795AB2083A9B90000D7C3 /* SessionManager.swift */; };
 		48EB6A31207825AC00DAD295 /* Generics+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EB6A30207825AC00DAD295 /* Generics+Utilities.swift */; };
 		48EB6A3420782D2300DAD295 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48EB6A3620782D2300DAD295 /* Localizable.strings */; };
 		48EB6A3A207831BF00DAD295 /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EB6A39207831BF00DAD295 /* String+Localized.swift */; };
@@ -68,6 +70,7 @@
 		484F410320803920005169A3 /* OnboardingInfoPageTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInfoPageTVC.swift; sourceTree = "<group>"; };
 		484F410420803920005169A3 /* OnboardingInfoPageTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingInfoPageTVC.xib; sourceTree = "<group>"; };
 		484F41072080394C005169A3 /* OnboardingInfoPageVW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInfoPageVW.swift; sourceTree = "<group>"; };
+		4866AB9F2083EB8F00D9E3AF /* UIViewController+MakeRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+MakeRoot.swift"; sourceTree = "<group>"; };
 		489005662081AFAB0016F607 /* OnboardingInfoPageVWViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInfoPageVWViewModel.swift; sourceTree = "<group>"; };
 		489005682081AFF00016F607 /* OnboardingInfoPageTVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInfoPageTVCViewModel.swift; sourceTree = "<group>"; };
 		489376FC2075A47500FAC527 /* BreedPic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreedPic.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +97,7 @@
 		48D709682075C88C00A8C29C /* OnboardingPageChildVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageChildVC.swift; sourceTree = "<group>"; };
 		48D7096C2075D36D00A8C29C /* OnboardingPVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPVC.swift; sourceTree = "<group>"; };
 		48D7096D2075D36D00A8C29C /* OnboardingPageChildVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingPageChildVC.xib; sourceTree = "<group>"; };
+		48D795AB2083A9B90000D7C3 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		48EB6A30207825AC00DAD295 /* Generics+Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Generics+Utilities.swift"; sourceTree = "<group>"; };
 		48EB6A3520782D2300DAD295 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		48EB6A3720782D7E00DAD295 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -236,6 +240,7 @@
 			children = (
 				4893772D2075AC5600FAC527 /* Breed.swift */,
 				4849D410207EE6C100F842EC /* UserProfile.swift */,
+				48D795AB2083A9B90000D7C3 /* SessionManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 			children = (
 				48EB6A30207825AC00DAD295 /* Generics+Utilities.swift */,
 				48EB6A39207831BF00DAD295 /* String+Localized.swift */,
+				4866AB9F2083EB8F00D9E3AF /* UIViewController+MakeRoot.swift */,
 			);
 			path = "Utils+Extensions";
 			sourceTree = "<group>";
@@ -479,11 +485,13 @@
 				480ED6CC2082E9E40033DF9D /* LoginVC.swift in Sources */,
 				48FA78EB207D706B00377DEC /* APIClient.swift in Sources */,
 				4893772E2075AC5600FAC527 /* Breed.swift in Sources */,
+				4866ABA02083EB8F00D9E3AF /* UIViewController+MakeRoot.swift in Sources */,
 				489005692081AFF00016F607 /* OnboardingInfoPageTVCViewModel.swift in Sources */,
 				4849D411207EE6C100F842EC /* UserProfile.swift in Sources */,
 				484F410520803920005169A3 /* OnboardingInfoPageTVC.swift in Sources */,
 				48D7095E2075BCC900A8C29C /* FavoritePicturesVC.swift in Sources */,
 				4893772B2075AA9E00FAC527 /* MainTabBarVC.swift in Sources */,
+				48D795AC2083A9B90000D7C3 /* SessionManager.swift in Sources */,
 				489377002075A47500FAC527 /* AppDelegate.swift in Sources */,
 				489005672081AFAB0016F607 /* OnboardingInfoPageVWViewModel.swift in Sources */,
 				48EB6A31207825AC00DAD295 /* Generics+Utilities.swift in Sources */,

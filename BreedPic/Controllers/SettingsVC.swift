@@ -7,10 +7,16 @@
 //
 
 import UIKit
+import GoogleSignIn
 
-class SettingsVC: UIViewController {
+class SettingsVC: UIViewController, GIDSignInUIDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        GIDSignIn.sharedInstance().uiDelegate = self
+    }
+
+    @IBAction func btnLogOutTapped(_ sender: Any) {
+        SessionManager.shared.logOut()
     }
 }

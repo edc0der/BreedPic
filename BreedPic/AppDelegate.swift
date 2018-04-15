@@ -15,9 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        //Initialize Google Sign-in
-        GIDSignIn.sharedInstance().clientID = "1062719120407-tm4cshsg5a5gc165qn5ugjuqjlol5v0h.apps.googleusercontent.com"
-        GIDSignIn.sharedInstance().delegate = self
+        SessionManager.shared.prepareForGoogleSignIn()
         return true
     }
 
@@ -47,33 +45,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-}
-
-extension AppDelegate: GIDSignInDelegate {
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if let error = error {
-            print("\(error.localizedDescription)")
-        } else {
-            // Perform any operations on signed in user here.
-            let userId = user.userID                  // For client-side use only!
-            let idToken = user.authentication.idToken // Safe to send to the server
-            let email = user.profile.email
-
-            let pictures = Picture(thumbnailURL: user.profile.imageURL(withDimension: PictureSize.small.rawValue), mediumURL: user.profile.imageURL(withDimension: PictureSize.medium.rawValue), largeURL: user.profile.imageURL(withDimension: PictureSize.large.rawValue))
-
-//            var userProfile = UserProfile()
-
-            var name = Name(firstName: user.profile.givenName, lastName: user.profile.familyName)
-
-        }
-    }
-
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        if let error = error {
-            print("\(error.localizedDescription)")
-            return
-        }
-        print("disconnect user")
     }
 }

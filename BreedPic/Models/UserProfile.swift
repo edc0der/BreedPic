@@ -25,11 +25,29 @@ class UserProfile: Codable {
     var nat: String?
     var login: Login?
     var dob, registered: String?
+    var hasSeenOnboarding = false
+    var favoriteBreeds = [Breed]()
+    var favoritePictures = [String]()
+
+    init(id: ID?, name: Name?, picture: Picture?, email: String?) {
+        self.name = name
+        self.picture = picture
+        self.email = email
+    }
+
+    func hasFavoriteBreeds() -> Bool {
+        return favoriteBreeds.count > 0
+    }
 }
 
 class ID: Codable {
     var name: String?
     var value: String?
+
+    init(name: String?, value: String?) {
+        self.name = name
+        self.value = value
+    }
 }
 
 class Location: Codable {
@@ -56,7 +74,7 @@ class Name: Codable {
 
 //TODO: Make url
 class Picture: Codable {
-    var large, medium, thumbnail: String!
+    var large, medium, thumbnail: String?
 
     init(thumbnailURL: URL?, mediumURL: URL?, largeURL: URL?) {
         thumbnail = thumbnailURL?.absoluteString

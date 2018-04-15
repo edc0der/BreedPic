@@ -60,10 +60,10 @@ extension OnboardingPVC: UIPageViewControllerDataSource {
         guard let viewController = viewController as? OnboardingPageChildVC else { return nil }
         
         if viewController.index == (pagesCount - 1) {
-            let sboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let vc = sboard.instantiateViewController(withIdentifier: "MainNavigation")
-            let window = UIApplication.shared.keyWindow ?? UIWindow(frame: UIScreen.main.bounds)
-            window.rootViewController = vc
+            if let user = SessionManager.shared.currentUser {
+                user.hasSeenOnboarding = true
+            }
+            dismiss(animated: true, completion: nil)
             return nil
         }
         return viewControllerAtIndex(viewController.index + 1)
