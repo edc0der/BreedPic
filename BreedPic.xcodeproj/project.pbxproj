@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		480ED6C92082E66D0033DF9D /* credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = 480ED6C82082E66D0033DF9D /* credentials.plist */; };
+		480ED6CC2082E9E40033DF9D /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480ED6CA2082E9E40033DF9D /* LoginVC.swift */; };
+		480ED6CD2082E9E40033DF9D /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 480ED6CB2082E9E40033DF9D /* LoginVC.xib */; };
 		48275DB920771E7B00F3B0E2 /* OnboardingPVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48275DB820771E7B00F3B0E2 /* OnboardingPVC.xib */; };
-		4849D411207EE6C100F842EC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4849D410207EE6C100F842EC /* User.swift */; };
+		4849D411207EE6C100F842EC /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4849D410207EE6C100F842EC /* UserProfile.swift */; };
 		4849D413207EF7DA00F842EC /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4849D412207EF7DA00F842EC /* UserRouter.swift */; };
 		484F410220803821005169A3 /* OnboardingInfoPageVW.xib in Resources */ = {isa = PBXBuildFile; fileRef = 484F410120803821005169A3 /* OnboardingInfoPageVW.xib */; };
 		484F410520803920005169A3 /* OnboardingInfoPageTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484F410320803920005169A3 /* OnboardingInfoPageTVC.swift */; };
@@ -55,8 +58,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		480ED6C82082E66D0033DF9D /* credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = credentials.plist; sourceTree = "<group>"; };
+		480ED6CA2082E9E40033DF9D /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		480ED6CB2082E9E40033DF9D /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
 		48275DB820771E7B00F3B0E2 /* OnboardingPVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingPVC.xib; sourceTree = "<group>"; };
-		4849D410207EE6C100F842EC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4849D410207EE6C100F842EC /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		4849D412207EF7DA00F842EC /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
 		484F410120803821005169A3 /* OnboardingInfoPageVW.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingInfoPageVW.xib; sourceTree = "<group>"; };
 		484F410320803920005169A3 /* OnboardingInfoPageTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInfoPageTVC.swift; sourceTree = "<group>"; };
@@ -187,6 +193,7 @@
 				48D709642075C36F00A8C29C /* FavoriteCategoriesTVC.swift */,
 				48D709602075BD1800A8C29C /* SettingsVC.swift */,
 				489377262075A81800FAC527 /* LaunchAnimationVC.swift */,
+				480ED6CA2082E9E40033DF9D /* LoginVC.swift */,
 				4893772A2075AA9E00FAC527 /* MainTabBarVC.swift */,
 				48D7096C2075D36D00A8C29C /* OnboardingPVC.swift */,
 				48D709682075C88C00A8C29C /* OnboardingPageChildVC.swift */,
@@ -204,6 +211,7 @@
 				48D7095D2075BCC900A8C29C /* FavoritePicturesVC.xib */,
 				48D709612075BD1800A8C29C /* SettingsVC.xib */,
 				4893770A2075A47600FAC527 /* LaunchScreen.storyboard */,
+				480ED6CB2082E9E40033DF9D /* LoginVC.xib */,
 				489377052075A47500FAC527 /* Main.storyboard */,
 				48275DB820771E7B00F3B0E2 /* OnboardingPVC.xib */,
 				48D7096D2075D36D00A8C29C /* OnboardingPageChildVC.xib */,
@@ -227,7 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				4893772D2075AC5600FAC527 /* Breed.swift */,
-				4849D410207EE6C100F842EC /* User.swift */,
+				4849D410207EE6C100F842EC /* UserProfile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -235,6 +243,7 @@
 		48D709562075B6E500A8C29C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				480ED6C82082E66D0033DF9D /* credentials.plist */,
 				48EB6A3620782D2300DAD295 /* Localizable.strings */,
 			);
 			path = Resources;
@@ -279,6 +288,7 @@
 				489376F92075A47500FAC527 /* Frameworks */,
 				489376FA2075A47500FAC527 /* Resources */,
 				F33781213313D1BDEE2D91A9 /* [CP] Embed Pods Frameworks */,
+				3C640E799CD8986D41091DC3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -352,6 +362,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				480ED6CD2082E9E40033DF9D /* LoginVC.xib in Resources */,
 				48D709672075C36F00A8C29C /* FavoriteCategoriesTVC.xib in Resources */,
 				48EB6A3420782D2300DAD295 /* Localizable.strings in Resources */,
 				48275DB920771E7B00F3B0E2 /* OnboardingPVC.xib in Resources */,
@@ -364,6 +375,7 @@
 				489377072075A47500FAC527 /* Main.storyboard in Resources */,
 				484F410220803821005169A3 /* OnboardingInfoPageVW.xib in Resources */,
 				48D7096F2075D36D00A8C29C /* OnboardingPageChildVC.xib in Resources */,
+				480ED6C92082E66D0033DF9D /* credentials.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +389,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3C640E799CD8986D41091DC3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BreedPic/Pods-BreedPic-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BreedPic/Pods-BreedPic-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D4C9E07FFF8C3B817080C48B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -421,10 +451,16 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BreedPic/Pods-BreedPic-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -440,10 +476,11 @@
 			files = (
 				48D709662075C36F00A8C29C /* FavoriteCategoriesTVC.swift in Sources */,
 				48D7095A2075BCA900A8C29C /* FavoriteCategoriesVC.swift in Sources */,
+				480ED6CC2082E9E40033DF9D /* LoginVC.swift in Sources */,
 				48FA78EB207D706B00377DEC /* APIClient.swift in Sources */,
 				4893772E2075AC5600FAC527 /* Breed.swift in Sources */,
 				489005692081AFF00016F607 /* OnboardingInfoPageTVCViewModel.swift in Sources */,
-				4849D411207EE6C100F842EC /* User.swift in Sources */,
+				4849D411207EE6C100F842EC /* UserProfile.swift in Sources */,
 				484F410520803920005169A3 /* OnboardingInfoPageTVC.swift in Sources */,
 				48D7095E2075BCC900A8C29C /* FavoritePicturesVC.swift in Sources */,
 				4893772B2075AA9E00FAC527 /* MainTabBarVC.swift in Sources */,

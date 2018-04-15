@@ -5,6 +5,7 @@ target 'BreedPic' do
 
   # Pods for BreedPic
   pod 'Alamofire', '~> 4.7'
+  pod 'GoogleSignIn'
 
   target 'BreedPicTests' do
     inherit! :search_paths

@@ -17,7 +17,8 @@ class LaunchAnimationVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        let vc = OnboardingPVC(nibName: className(target: OnboardingPVC.self), bundle: nil)
+        let vc = LoginVC(nibName: className(target: LoginVC.self), bundle: nil)
+//        let vc = OnboardingPVC(nibName: className(target: OnboardingPVC.self), bundle: nil)
         let window = UIApplication.shared.keyWindow ?? UIWindow(frame: UIScreen.main.bounds)
         window.rootViewController = vc
     }

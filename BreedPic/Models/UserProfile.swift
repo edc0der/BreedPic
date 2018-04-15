@@ -8,7 +8,13 @@
 
 import Foundation
 
-class User: Codable {
+enum PictureSize: UInt {
+    case large = 128
+    case medium = 72
+    case small = 48
+}
+
+class UserProfile: Codable {
     var id: ID?
     var name: Name?
     var picture: Picture?
@@ -38,8 +44,23 @@ class Login: Codable {
 
 class Name: Codable {
     var title, first, last: String?
+
+    init(firstName: String?, lastName: String, title: String? = nil) {
+        if let title = title {
+            self.title = title
+        }
+        first = firstName
+        last = lastName
+    }
 }
 
+//TODO: Make url
 class Picture: Codable {
-    var large, medium, thumbnail: String?
+    var large, medium, thumbnail: String!
+
+    init(thumbnailURL: URL?, mediumURL: URL?, largeURL: URL?) {
+        thumbnail = thumbnailURL?.absoluteString
+        medium = mediumURL?.absoluteString
+        large = largeURL?.absoluteString
+    }
 }
