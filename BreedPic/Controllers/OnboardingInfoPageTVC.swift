@@ -10,9 +10,9 @@ import UIKit
 
 class OnboardingInfoPageTVC: UITableViewCell {
 
-    @IBOutlet weak var imgIcon: UIImageView!
-    @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var lblDescription: UILabel!
+    @IBOutlet weak private var imgIcon: UIImageView!
+    @IBOutlet weak private var lblTitle: UILabel!
+    @IBOutlet weak private var lblDescription: UILabel!
 
     var viewModel: OnboardingInfoPageTVCViewModel? {
         didSet {

@@ -18,6 +18,8 @@
 		484F410620803920005169A3 /* OnboardingInfoPageTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 484F410420803920005169A3 /* OnboardingInfoPageTVC.xib */; };
 		484F41082080394C005169A3 /* OnboardingInfoPageVW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484F41072080394C005169A3 /* OnboardingInfoPageVW.swift */; };
 		4866ABA02083EB8F00D9E3AF /* UIViewController+MakeRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4866AB9F2083EB8F00D9E3AF /* UIViewController+MakeRoot.swift */; };
+		488EBEB320851ECA009AAD01 /* UIStoryboard+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488EBEB220851ECA009AAD01 /* UIStoryboard+Util.swift */; };
+		488EBEB520852C41009AAD01 /* String+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488EBEB420852C41009AAD01 /* String+ClassName.swift */; };
 		489005672081AFAB0016F607 /* OnboardingInfoPageVWViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489005662081AFAB0016F607 /* OnboardingInfoPageVWViewModel.swift */; };
 		489005692081AFF00016F607 /* OnboardingInfoPageTVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489005682081AFF00016F607 /* OnboardingInfoPageTVCViewModel.swift */; };
 		489377002075A47500FAC527 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489376FF2075A47500FAC527 /* AppDelegate.swift */; };
@@ -71,6 +73,8 @@
 		484F410420803920005169A3 /* OnboardingInfoPageTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingInfoPageTVC.xib; sourceTree = "<group>"; };
 		484F41072080394C005169A3 /* OnboardingInfoPageVW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInfoPageVW.swift; sourceTree = "<group>"; };
 		4866AB9F2083EB8F00D9E3AF /* UIViewController+MakeRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+MakeRoot.swift"; sourceTree = "<group>"; };
+		488EBEB220851ECA009AAD01 /* UIStoryboard+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Util.swift"; sourceTree = "<group>"; };
+		488EBEB420852C41009AAD01 /* String+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ClassName.swift"; sourceTree = "<group>"; };
 		489005662081AFAB0016F607 /* OnboardingInfoPageVWViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInfoPageVWViewModel.swift; sourceTree = "<group>"; };
 		489005682081AFF00016F607 /* OnboardingInfoPageTVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInfoPageTVCViewModel.swift; sourceTree = "<group>"; };
 		489376FC2075A47500FAC527 /* BreedPic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreedPic.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -267,8 +271,10 @@
 			isa = PBXGroup;
 			children = (
 				48EB6A30207825AC00DAD295 /* Generics+Utilities.swift */,
+				488EBEB420852C41009AAD01 /* String+ClassName.swift */,
 				48EB6A39207831BF00DAD295 /* String+Localized.swift */,
 				4866AB9F2083EB8F00D9E3AF /* UIViewController+MakeRoot.swift */,
+				488EBEB220851ECA009AAD01 /* UIStoryboard+Util.swift */,
 			);
 			path = "Utils+Extensions";
 			sourceTree = "<group>";
@@ -489,7 +495,9 @@
 				489005692081AFF00016F607 /* OnboardingInfoPageTVCViewModel.swift in Sources */,
 				4849D411207EE6C100F842EC /* UserProfile.swift in Sources */,
 				484F410520803920005169A3 /* OnboardingInfoPageTVC.swift in Sources */,
+				488EBEB520852C41009AAD01 /* String+ClassName.swift in Sources */,
 				48D7095E2075BCC900A8C29C /* FavoritePicturesVC.swift in Sources */,
+				488EBEB320851ECA009AAD01 /* UIStoryboard+Util.swift in Sources */,
 				4893772B2075AA9E00FAC527 /* MainTabBarVC.swift in Sources */,
 				48D795AC2083A9B90000D7C3 /* SessionManager.swift in Sources */,
 				489377002075A47500FAC527 /* AppDelegate.swift in Sources */,

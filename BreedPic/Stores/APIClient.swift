@@ -10,13 +10,7 @@ import UIKit
 import Alamofire
 
 class APIClient: NSObject {
-    var _breedList = [Breed]()
-
-    public var breedList: [Breed] {
-        return _breedList
-    }
-
-    typealias BreedListCompletion = ([Breed]?) -> Void
+    typealias BreedListCompletion = ([String]?) -> Void //TODO: Should be [Breed]
 
     func getBreedList(completion: @escaping BreedListCompletion) -> Void {
         Alamofire.request(BreedRouter.getSimpleBreedList).responseJSON { (response) in
@@ -24,12 +18,11 @@ class APIClient: NSObject {
                 let responseDictionary = response.result.value as? [String : Any],
                 let breeds = responseDictionary["message"] as? [String]
             else {
-                self._breedList = []
+                completion([])
                 return
             }
             DispatchQueue.main.async {
-//                self._breedList = breeds
-                completion(self.breedList)
+                completion(breeds)
             }
         }
     }

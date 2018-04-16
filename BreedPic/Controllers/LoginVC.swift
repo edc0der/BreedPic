@@ -11,7 +11,7 @@ import GoogleSignIn
 
 class LoginVC: UIViewController, GIDSignInUIDelegate {
 
-    @IBOutlet weak var btnLogin: GIDSignInButton!
+    @IBOutlet weak private var btnLogin: GIDSignInButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,9 +39,7 @@ extension LoginVC: SessionManagerDelegate {
             print("Error performing login: \(error.localizedDescription)")
             return
         }
-
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let viewController = storyboard.instantiateViewController(withIdentifier: "MainNavigation")
-        viewController.setAsRoot()
+        let mainController = UIStoryboard.mainNavigationController()
+        mainController.setAsRoot()
     }
 }

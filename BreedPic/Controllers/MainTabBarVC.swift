@@ -18,14 +18,14 @@ class MainTabBarVC: UITabBarController {
             return
         }
         if !user.hasSeenOnboarding {
-            let viewController = OnboardingPVC(nibName: className(target: OnboardingPVC.self), bundle: nil)
+            let viewController = OnboardingPVC(nibName: String.className(target: OnboardingPVC.self), bundle: nil)
             viewController.modalPresentationStyle = .overFullScreen
             navigationController?.present(viewController, animated: true, completion: nil)
         }
 
-        let vcFavoriteCategories = FavoriteCategoriesVC(nibName: className(target: FavoriteCategoriesVC.self), bundle: nil)
-        let vcFavoritePictures = FavoritePicturesVC(nibName: className(target: FavoritePicturesVC.self), bundle: nil)
-        let vcSettings = SettingsVC(nibName: className(target: SettingsVC.self), bundle: nil)
+        let vcFavoriteCategories = FavoriteCategoriesVC(nibName: String.className(target: FavoriteCategoriesVC.self), bundle: nil)
+        let vcFavoritePictures = FavoritePicturesVC(nibName: String.className(target: FavoritePicturesVC.self), bundle: nil)
+        let vcSettings = SettingsVC(nibName: String.className(target: SettingsVC.self), bundle: nil)
 
         vcFavoriteCategories.tabBarItem = UITabBarItem(title: .feedItem, image: #imageLiteral(resourceName: "search"), tag: 0)
         vcFavoritePictures.tabBarItem = UITabBarItem(title: .favoritesItem, image: #imageLiteral(resourceName: "tickBox"), tag: 1)

@@ -8,6 +8,11 @@
 
 import Foundation
 
+struct BaseJsonStruct<T : Codable>: Codable {
+    let status: String?
+    let message: T?
+}
+
 class Breed: Codable {
     var id: String? //self generated
     var name: String = "" {
@@ -23,9 +28,4 @@ class Breed: Codable {
     init(name: String) {
         self.name = name
     }
-}
-
-struct BaseJsonStruct<T : Codable>: Codable {
-    let status: String?
-    let message: T?
 }

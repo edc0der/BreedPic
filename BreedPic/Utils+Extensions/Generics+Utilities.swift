@@ -8,14 +8,6 @@
 
 import Foundation
 
-func className(target: AnyObject) -> String {
-    let nameSpaceClassName = NSStringFromClass(type(of: target))
-    if let className = nameSpaceClassName.components(separatedBy: ".").last {
-        return className
-    }
-    return ""
-}
-
 func randomizeArray<T>(_ arr: inout Array<T>) -> Void {
     let maxIndex = arr.count - 1
 

@@ -18,7 +18,7 @@ extension SessionManagerDelegate {
     func sessionManager(didLogout success: Bool, _ error: Error?) -> Void { }
 }
 
-class SessionManager: NSObject, GIDSignInDelegate {
+class SessionManager: NSObject {
     static let shared = SessionManager()
 
     private override init() { }
@@ -33,10 +33,32 @@ class SessionManager: NSObject, GIDSignInDelegate {
     }
 
     public func presentLoginScreen(animated: Bool? = false) {
-        let viewController = LoginVC(nibName: className(target: LoginVC.self), bundle: nil)
+        let viewController = LoginVC(nibName: String.className(target: LoginVC.self), bundle: nil)
         viewController.setAsRoot()
     }
 
+    func isSignedIn() -> Bool {
+        return GIDSignIn.sharedInstance().hasAuthInKeychain() && currentUser != nil
+    }
+
+    func userHasSeenOnboarding() -> Bool {
+        guard let user = currentUser else {
+            return false
+        }
+        return user.hasSeenOnboarding
+    }
+
+    func isSilentLogInNeeded() -> Bool {
+        return GIDSignIn.sharedInstance().hasAuthInKeychain()
+    }
+
+    func logOut() -> Void {
+        GIDSignIn.sharedInstance().signOut()
+        presentLoginScreen()
+    }
+}
+
+extension SessionManager: GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if let error = error {
             print("\(error.localizedDescription)")
@@ -61,21 +83,5 @@ class SessionManager: NSObject, GIDSignInDelegate {
         }
         currentUser = nil
         delegate?.sessionManager(didLogout: true, nil)
-    }
-
-    func isSignedIn() -> Bool {
-        return GIDSignIn.sharedInstance().hasAuthInKeychain()
-    }
-
-    func userHasSeenOnboarding() -> Bool {
-        guard let user = currentUser else {
-            return false
-        }
-        return user.hasSeenOnboarding
-    }
-
-    func logOut() -> Void {
-        GIDSignIn.sharedInstance().signOut()
-        presentLoginScreen()
     }
 }

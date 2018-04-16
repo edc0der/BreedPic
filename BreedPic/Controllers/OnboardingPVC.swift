@@ -34,7 +34,7 @@ class OnboardingPVC: UIViewController {
     }
 
     func viewControllerAtIndex(_ index: Int8) -> OnboardingPageChildVC {
-        let childVC = OnboardingPageChildVC(nibName: className(target: OnboardingPageChildVC.self), bundle: nil)
+        let childVC = OnboardingPageChildVC(nibName: String.className(target: OnboardingPageChildVC.self), bundle: nil)
         childVC.index = index
         return childVC
     }

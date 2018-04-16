@@ -13,20 +13,19 @@ fileprivate let heightAverageOffsetPerCell: CGFloat = 8.0
 class OnboardingInfoPageVW: UIView {
     
     @IBOutlet var view: UIView!
-    @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var tblFeatures: UITableView!
-    @IBOutlet weak var lcTableHeight: NSLayoutConstraint!
+    @IBOutlet weak private var lblTitle: UILabel!
+    @IBOutlet weak private var tblFeatures: UITableView!
+    @IBOutlet weak private var lcTableHeight: NSLayoutConstraint!
     @IBOutlet var viewModel: OnboardingInfoPageVWViewModel!
 
     var pageType: PageType? {
         didSet {
-            if let pageType = pageType { //may not be needed - didSet
-                viewModel.loadItems(type: pageType) { (success) in
-                    if success {
-                        DispatchQueue.main.async {
-                            self.lblTitle.text = self.viewModel.title
-                            self.tblFeatures.reloadData()
-                        }
+            guard let pageType = pageType else { return }
+            viewModel.loadItems(type: pageType) { (success) in
+                if success {
+                    DispatchQueue.main.async {
+                        self.lblTitle.text = self.viewModel.title
+                        self.tblFeatures.reloadData()
                     }
                 }
             }
@@ -45,7 +44,7 @@ class OnboardingInfoPageVW: UIView {
 
     func commonInit() -> Void {
         let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: className(target: self), bundle: bundle)
+        let nib = UINib(nibName: String.className(target: self), bundle: bundle)
         guard let view = nib.instantiate(withOwner: self, options: nil).first as? UIView else { return }
         view.frame = bounds
         self.addSubview(view)
