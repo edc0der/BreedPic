@@ -11,7 +11,7 @@ import UIKit
 class OnboardingPVC: UIViewController {
 
     var pageController: UIPageViewController!
-    let pagesCount = 3
+    let pagesCount = 2
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +41,7 @@ class OnboardingPVC: UIViewController {
 }
 
 extension OnboardingPVC: UIPageViewControllerDelegate {
+
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return pagesCount
     }
@@ -51,6 +52,7 @@ extension OnboardingPVC: UIPageViewControllerDelegate {
 }
 
 extension OnboardingPVC: UIPageViewControllerDataSource {
+
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         guard let viewController = viewController as? OnboardingPageChildVC, viewController.index > 0 else { return nil }
         return viewControllerAtIndex(viewController.index - 1)
@@ -58,14 +60,22 @@ extension OnboardingPVC: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         guard let viewController = viewController as? OnboardingPageChildVC else { return nil }
-        
-        if viewController.index == (pagesCount - 1) {
+
+        if viewController.index == pagesCount {
+            return nil
+        }
+        return viewControllerAtIndex(viewController.index + 1)
+    }
+
+    func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+        guard let viewController = pendingViewControllers.first as? OnboardingPageChildVC else {
+            return
+        }
+        if viewController.index == pagesCount {
             if let user = SessionManager.shared.currentUser {
                 user.hasSeenOnboarding = true
             }
             dismiss(animated: true, completion: nil)
-            return nil
         }
-        return viewControllerAtIndex(viewController.index + 1)
     }
 }
