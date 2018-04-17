@@ -16,6 +16,18 @@ class LaunchAnimationVC: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        SessionManager.shared.presentLoginScreen()
+
+        var breedList: [Breed]?
+        var userList: [UserProfile]?
+        let client = APIClient()
+
+        client.getBreedList { (list) in
+            breedList = list
+            client.getUser(amount: 50, completion: { (dict) in
+                userList = dict
+                SessionManager.shared.presentLoginScreen()
+            })
+        }
+
     }
 }

@@ -14,6 +14,18 @@ enum PictureSize: UInt {
     case small = 48
 }
 
+class BaseUserResult: Codable {
+    var results: [UserProfile]?
+    var info: Info?
+}
+
+class Info: Codable {
+    var seed: String?
+    var
+    results, page: Int?
+    var version: String?
+}
+
 class UserProfile: Codable {
     var id: ID?
     var name: Name?
@@ -38,6 +50,10 @@ class UserProfile: Codable {
     func hasFavoriteBreeds() -> Bool {
         return favoriteBreeds.count > 0
     }
+
+    enum CodingKeys: String, CodingKey {
+        case id, name, picture, gender, email, phone, cell, location, nat, login, dob, registered
+    }
 }
 
 class ID: Codable {
@@ -53,6 +69,10 @@ class ID: Codable {
 class Location: Codable {
     var street, city, state: String?
     var postcode: Int?
+
+    enum CodingKeys: String, CodingKey {
+        case street, city, state
+    }
 }
 
 class Login: Codable {

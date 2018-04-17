@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct BaseJsonStruct<T : Codable>: Codable {
+struct BaseBreedResult<T : Codable>: Codable {
     let status: String?
-    let message: T?
+    let message: T? //can be array, dictionary and/or string
 }
 
-class Breed: Codable {
-    var id: String? //self generated
-    var name: String = "" {
+class Breed {
+    public private(set) var id: String? //self generated
+    public private(set) var name: String = "" {
         didSet {
             if let data = name.data(using: .utf8) {
                 id = data.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
@@ -23,9 +23,13 @@ class Breed: Codable {
         }
     }
     var imagesURLs = [String]()
-    var subBreeds: [Breed]?
 
     init(name: String) {
-        self.name = name
+        setName(newName: name)
+    }
+
+    //hack to call didSet on init
+    private func setName(newName: String) -> Void {
+        self.name = newName
     }
 }
