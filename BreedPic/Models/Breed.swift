@@ -22,7 +22,7 @@ class Breed {
             }
         }
     }
-    var imagesURLs = [String]()
+    public var imagesURLs = [String]()
 
     init(name: String) {
         setName(newName: name)

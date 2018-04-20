@@ -4,7 +4,7 @@ target 'BreedPic' do
   use_frameworks!
 
   # Pods for BreedPic
-  pod 'Alamofire', '~> 4.7'
+  pod 'Moya/RxSwift', '~> 11.0'
   pod 'GoogleSignIn'
 
   target 'BreedPicTests' do

@@ -21,8 +21,7 @@ class BaseUserResult: Codable {
 
 class Info: Codable {
     var seed: String?
-    var
-    results, page: Int?
+    var results, page: Int?
     var version: String?
 }
 
@@ -38,6 +37,7 @@ class UserProfile: Codable {
     var login: Login?
     var dob, registered: String?
     var hasSeenOnboarding = false
+
     var favoriteBreeds = [Breed]()
     var favoritePictures = [String]()
 
@@ -51,7 +51,7 @@ class UserProfile: Codable {
         return favoriteBreeds.count > 0
     }
 
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case id, name, picture, gender, email, phone, cell, location, nat, login, dob, registered
     }
 }
@@ -70,7 +70,7 @@ class Location: Codable {
     var street, city, state: String?
     var postcode: Int?
 
-    enum CodingKeys: String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case street, city, state
     }
 }
@@ -84,21 +84,18 @@ class Name: Codable {
     var title, first, last: String?
 
     init(firstName: String?, lastName: String, title: String? = nil) {
-        if let title = title {
-            self.title = title
-        }
-        first = firstName
-        last = lastName
+        self.title = title
+        self.first = firstName
+        self.last = lastName
     }
 }
 
-//TODO: Make url
 class Picture: Codable {
-    var large, medium, thumbnail: String?
+    var large, medium, thumbnail: URL?
 
     init(thumbnailURL: URL?, mediumURL: URL?, largeURL: URL?) {
-        thumbnail = thumbnailURL?.absoluteString
-        medium = mediumURL?.absoluteString
-        large = largeURL?.absoluteString
+        thumbnail = thumbnailURL
+        medium = mediumURL
+        large = largeURL
     }
 }
