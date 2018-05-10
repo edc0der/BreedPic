@@ -36,7 +36,7 @@ class MainTabBarVC: UITabBarController {
     }
 
     func setupTabItems() -> Void {
-        let vcFavoriteCategories = FavoriteCategoriesVC(nibName: String.className(target: FavoriteCategoriesVC.self), bundle: nil)
+        let vcFavoriteCategories = FavoriteCategoriesCollectionVC(nibName: String.className(target: FavoriteCategoriesCollectionVC.self), bundle: nil)
         let vcFavoritePictures = FavoritePicturesVC(nibName: String.className(target: FavoritePicturesVC.self), bundle: nil)
         let vcSettings = SettingsVC(nibName: String.className(target: SettingsVC.self), bundle: nil)
 

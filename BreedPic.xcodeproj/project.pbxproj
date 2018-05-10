@@ -18,6 +18,8 @@
 		484F41082080394C005169A3 /* OnboardingInfoPageVW.swift in Sources */ = {isa = PBXBuildFile; fileRef = 484F41072080394C005169A3 /* OnboardingInfoPageVW.swift */; };
 		4866ABA02083EB8F00D9E3AF /* UIViewController+MakeRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4866AB9F2083EB8F00D9E3AF /* UIViewController+MakeRoot.swift */; };
 		488CAF9420A3ECF0004ABB5D /* DogCeoAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488CAF9320A3ECF0004ABB5D /* DogCeoAPIService.swift */; };
+		488CAF9920A3F16D004ABB5D /* FavoriteCategoriesCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488CAF9720A3F16D004ABB5D /* FavoriteCategoriesCollectionVC.swift */; };
+		488CAF9A20A3F16D004ABB5D /* FavoriteCategoriesCollectionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 488CAF9820A3F16D004ABB5D /* FavoriteCategoriesCollectionVC.xib */; };
 		488EBEB320851ECA009AAD01 /* UIStoryboard+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488EBEB220851ECA009AAD01 /* UIStoryboard+Util.swift */; };
 		488EBEB520852C41009AAD01 /* String+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488EBEB420852C41009AAD01 /* String+ClassName.swift */; };
 		489005672081AFAB0016F607 /* OnboardingInfoPageVWViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489005662081AFAB0016F607 /* OnboardingInfoPageVWViewModel.swift */; };
@@ -29,8 +31,6 @@
 		489377172075A47600FAC527 /* BreedPicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 489377162075A47600FAC527 /* BreedPicTests.swift */; };
 		4893772B2075AA9E00FAC527 /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4893772A2075AA9E00FAC527 /* MainTabBarVC.swift */; };
 		4893772E2075AC5600FAC527 /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4893772D2075AC5600FAC527 /* Breed.swift */; };
-		48D7095A2075BCA900A8C29C /* FavoriteCategoriesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D709582075BCA900A8C29C /* FavoriteCategoriesVC.swift */; };
-		48D7095B2075BCA900A8C29C /* FavoriteCategoriesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D709592075BCA900A8C29C /* FavoriteCategoriesVC.xib */; };
 		48D7095E2075BCC900A8C29C /* FavoritePicturesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D7095C2075BCC900A8C29C /* FavoritePicturesVC.swift */; };
 		48D7095F2075BCC900A8C29C /* FavoritePicturesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48D7095D2075BCC900A8C29C /* FavoritePicturesVC.xib */; };
 		48D709622075BD1800A8C29C /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D709602075BD1800A8C29C /* SettingsVC.swift */; };
@@ -71,6 +71,8 @@
 		484F41072080394C005169A3 /* OnboardingInfoPageVW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInfoPageVW.swift; sourceTree = "<group>"; };
 		4866AB9F2083EB8F00D9E3AF /* UIViewController+MakeRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+MakeRoot.swift"; sourceTree = "<group>"; };
 		488CAF9320A3ECF0004ABB5D /* DogCeoAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogCeoAPIService.swift; sourceTree = "<group>"; };
+		488CAF9720A3F16D004ABB5D /* FavoriteCategoriesCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCategoriesCollectionVC.swift; sourceTree = "<group>"; };
+		488CAF9820A3F16D004ABB5D /* FavoriteCategoriesCollectionVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteCategoriesCollectionVC.xib; sourceTree = "<group>"; };
 		488EBEB220851ECA009AAD01 /* UIStoryboard+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Util.swift"; sourceTree = "<group>"; };
 		488EBEB420852C41009AAD01 /* String+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ClassName.swift"; sourceTree = "<group>"; };
 		489005662081AFAB0016F607 /* OnboardingInfoPageVWViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInfoPageVWViewModel.swift; sourceTree = "<group>"; };
@@ -86,8 +88,6 @@
 		489377182075A47600FAC527 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4893772A2075AA9E00FAC527 /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
 		4893772D2075AC5600FAC527 /* Breed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breed.swift; sourceTree = "<group>"; };
-		48D709582075BCA900A8C29C /* FavoriteCategoriesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCategoriesVC.swift; sourceTree = "<group>"; };
-		48D709592075BCA900A8C29C /* FavoriteCategoriesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteCategoriesVC.xib; sourceTree = "<group>"; };
 		48D7095C2075BCC900A8C29C /* FavoritePicturesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePicturesVC.swift; sourceTree = "<group>"; };
 		48D7095D2075BCC900A8C29C /* FavoritePicturesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritePicturesVC.xib; sourceTree = "<group>"; };
 		48D709602075BD1800A8C29C /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
@@ -192,7 +192,7 @@
 		489377212075A72D00FAC527 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				48D709582075BCA900A8C29C /* FavoriteCategoriesVC.swift */,
+				488CAF9720A3F16D004ABB5D /* FavoriteCategoriesCollectionVC.swift */,
 				48D7095C2075BCC900A8C29C /* FavoritePicturesVC.swift */,
 				48D709642075C36F00A8C29C /* FavoriteCategoriesTVC.swift */,
 				48D709602075BD1800A8C29C /* SettingsVC.swift */,
@@ -209,7 +209,6 @@
 		489377222075A73A00FAC527 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				48D709592075BCA900A8C29C /* FavoriteCategoriesVC.xib */,
 				48D709652075C36F00A8C29C /* FavoriteCategoriesTVC.xib */,
 				48D7095D2075BCC900A8C29C /* FavoritePicturesVC.xib */,
 				48D709612075BD1800A8C29C /* SettingsVC.xib */,
@@ -220,6 +219,7 @@
 				48D7096D2075D36D00A8C29C /* OnboardingPageChildVC.xib */,
 				484F410120803821005169A3 /* OnboardingInfoPageVW.xib */,
 				484F410420803920005169A3 /* OnboardingInfoPageTVC.xib */,
+				488CAF9820A3F16D004ABB5D /* FavoriteCategoriesCollectionVC.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -370,9 +370,9 @@
 			files = (
 				480ED6CD2082E9E40033DF9D /* LoginVC.xib in Resources */,
 				48D709672075C36F00A8C29C /* FavoriteCategoriesTVC.xib in Resources */,
+				488CAF9A20A3F16D004ABB5D /* FavoriteCategoriesCollectionVC.xib in Resources */,
 				48EB6A3420782D2300DAD295 /* Localizable.strings in Resources */,
 				48275DB920771E7B00F3B0E2 /* OnboardingPVC.xib in Resources */,
-				48D7095B2075BCA900A8C29C /* FavoriteCategoriesVC.xib in Resources */,
 				4893770C2075A47600FAC527 /* LaunchScreen.storyboard in Resources */,
 				48D7095F2075BCC900A8C29C /* FavoritePicturesVC.xib in Resources */,
 				48D709632075BD1800A8C29C /* SettingsVC.xib in Resources */,
@@ -487,7 +487,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				48D709662075C36F00A8C29C /* FavoriteCategoriesTVC.swift in Sources */,
-				48D7095A2075BCA900A8C29C /* FavoriteCategoriesVC.swift in Sources */,
 				488CAF9420A3ECF0004ABB5D /* DogCeoAPIService.swift in Sources */,
 				480ED6CC2082E9E40033DF9D /* LoginVC.swift in Sources */,
 				48FA78EB207D706B00377DEC /* APIClient.swift in Sources */,
@@ -504,6 +503,7 @@
 				489377002075A47500FAC527 /* AppDelegate.swift in Sources */,
 				489005672081AFAB0016F607 /* OnboardingInfoPageVWViewModel.swift in Sources */,
 				48EB6A31207825AC00DAD295 /* Generics+Utilities.swift in Sources */,
+				488CAF9920A3F16D004ABB5D /* FavoriteCategoriesCollectionVC.swift in Sources */,
 				48D7096E2075D36D00A8C29C /* OnboardingPVC.swift in Sources */,
 				48EB6A3A207831BF00DAD295 /* String+Localized.swift in Sources */,
 				48D709622075BD1800A8C29C /* SettingsVC.swift in Sources */,
