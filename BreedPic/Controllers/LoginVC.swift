@@ -9,6 +9,7 @@
 import UIKit
 import GoogleSignIn
 
+//TODO: Modify view to be more appealing -- Add colors not just black and white
 class LoginVC: UIViewController, GIDSignInUIDelegate {
 
     @IBOutlet weak private var btnLogin: GIDSignInButton!
@@ -23,6 +24,8 @@ class LoginVC: UIViewController, GIDSignInUIDelegate {
         if !GIDSignIn.sharedInstance().hasAuthInKeychain() {
             return
         }
+        //TODO: Let user know of this sign in
+        //TODO: lock screen against another sign in
         GIDSignIn.sharedInstance().signInSilently()
     }
 

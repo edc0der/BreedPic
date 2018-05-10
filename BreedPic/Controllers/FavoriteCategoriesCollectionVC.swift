@@ -8,6 +8,7 @@
 
 import UIKit
 
+//TODO: Properly define View Model and move to corresponding folder
 class FavoriteCategoriesVCViewModel: NSObject {
     var imagesList: [String]?
     let client = APIClient()

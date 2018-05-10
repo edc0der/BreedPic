@@ -10,10 +10,6 @@ import UIKit
 
 class MainTabBarVC: UITabBarController {
 
-    private let client = APIClient()
-    private var masterBreedList = [Breed]()
-    private var dataSourceBreeds = [Breed]()
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,12 +22,6 @@ class MainTabBarVC: UITabBarController {
             viewController.modalPresentationStyle = .overFullScreen
             navigationController?.present(viewController, animated: true, completion: nil)
         }
-
-        client.getBreedList { (breeds) in
-            self.masterBreedList = breeds
-            randomizeArray(&self.masterBreedList)
-        }
-
         setupTabItems()
     }
 

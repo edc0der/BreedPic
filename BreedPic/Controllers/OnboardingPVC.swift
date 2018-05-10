@@ -27,6 +27,7 @@ class OnboardingPVC: UIViewController {
         view.addSubview(pageController.view)
         pageController.didMove(toParentViewController: self)
 
+        //TODO: Improve page control -- page indicator and dismissal
         let pageControl = UIPageControl.appearance(whenContainedInInstancesOf: [UIPageViewController.self])
         pageControl.currentPageIndicatorTintColor = UIColor.black
         pageControl.pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.2)

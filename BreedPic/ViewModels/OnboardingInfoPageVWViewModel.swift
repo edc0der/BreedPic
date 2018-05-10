@@ -15,6 +15,7 @@ class OnboardingInfoPageVWViewModel: NSObject {
     var items = [OnboardingInfoPageTVCViewModel]()
     var isUpdating = false
 
+    //TODO: Remove from viewModel shouldn't be here
     let cellNibName = "OnboardingInfoPageTVC"
     let cellReuseIdentifier = "OnboardingInfoPageTVCIdentifier"
 

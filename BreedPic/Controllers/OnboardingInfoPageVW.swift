@@ -51,6 +51,7 @@ class OnboardingInfoPageVW: UIView {
 
         self.tblFeatures.delegate = self
         self.tblFeatures.dataSource = self
+        //TODO: Improve register cell
         self.tblFeatures.register(UINib(nibName: viewModel.cellNibName, bundle: nil), forCellReuseIdentifier: viewModel.cellReuseIdentifier)
     }
 }
