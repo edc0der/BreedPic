@@ -6,53 +6,79 @@
 //  Copyright © 2018 Eduard Moya. All rights reserved.
 //
 
-import UIKit
-import Alamofire
+import Moya
 
 class APIClient: NSObject {
-    typealias BreedListCompletion = ([Breed]?) -> Void
-    typealias UserListCompletion = ([UserProfile]?) -> Void
+    typealias BreedListCompletion = ([Breed]) -> Void
+    typealias BreedImagesListCompletion = ([String]) -> Void
+
+    let provider = MoyaProvider<DogCeoAPIService>(plugins: [NetworkLoggerPlugin(verbose: true)])
 
     func getBreedList(completion: @escaping BreedListCompletion) -> Void {
-        Alamofire.request(BreedRouter.getSimpleBreedList).responseData { (responseData) in
-            if let error = responseData.error {
-                print("something went wrong \(error.localizedDescription)")
-                completion([])
-                return
-            }
-            do {
-                let decoder = JSONDecoder()
-                let breedListDecoded = try decoder.decode(BaseBreedResult<[String]>.self, from: responseData.data!)
-
-                guard let list = breedListDecoded.message else {
+        provider.request(.getSimpleBreedList) { (result) in
+            switch result {
+            case .success(let moyaResponse):
+                do {
+                    let decoder = JSONDecoder()
+                    let jsonObject: BaseBreedResult = try decoder.decode(BaseBreedResult<[String]>.self, from: moyaResponse.data)
+                    guard let breedNameList = jsonObject.message else {
+                        completion([])
+                        return
+                    }
+                    var breedList = [Breed]()
+                    for breedName in breedNameList {
+                        breedList.append(Breed(name: breedName))
+                    }
+                    completion(breedList)
+                } catch let error {
                     completion([])
-                    return
+                    print("\(error.localizedDescription)")
                 }
-                var breedList = [Breed]()
-                for breedName in list {
-                    breedList.append(Breed(name: breedName))
-                }
-                completion(breedList)
-            } catch let error {
-                print("something went wrong \(error.localizedDescription)")
+            case .failure(let error):
+                completion([])
+                print("\(error.localizedDescription)")
             }
         }
     }
 
-    func getUser(amount: Int? = 1, completion: @escaping UserListCompletion) -> Void {
-        Alamofire.request(UserRouter.getUser(number: amount!)).responseData { (responseData) in
-            if let error = responseData.error {
-                print("something went wrong \(error.localizedDescription)")
+    func getPictureForBreed(_ breed: String, completion: @escaping BreedImagesListCompletion) -> Void {
+        provider.request(.getAllBreedImages(breed: breed)) { (result) in
+            switch result {
+            case .success(let moyaResponse):
+                do {
+                    let decoder = JSONDecoder()
+                    let imagesURLList = try decoder.decode([String].self, from: moyaResponse.data)
+                    completion(imagesURLList)
+                } catch let error {
+                    completion([])
+                    print("\(error.localizedDescription)")
+                }
+            case .failure(let error):
                 completion([])
-                return
+                print("\(error.localizedDescription)")
             }
-            do {
-                let decoder = JSONDecoder()
-                let userListDecoded = try decoder.decode(BaseUserResult.self, from: responseData.data!)
+        }
+    }
 
-                completion(userListDecoded.results ?? [])
-            } catch let error {
-                print("something went wrong \(error.localizedDescription)")
+    func getRandomImages(completion: @escaping BreedImagesListCompletion) -> Void {
+        provider.request(.getMultipleRandomImages(amount: 10)) { (result) in
+            switch result {
+                case .success(let moyaResponse):
+                    do {
+                        let decoder = JSONDecoder()
+                        let decodedObject = try decoder.decode(BaseBreedResult<[String]>.self, from: moyaResponse.data)
+                        guard let list = decodedObject.message else {
+                            completion([])
+                            return
+                        }
+                        completion(list)
+                    } catch let error {
+                        completion([])
+                        print("\(error.localizedDescription)")
+                    }
+                case .failure(let error):
+                    completion([])
+                    print("\(error.localizedDescription)")
             }
         }
     }

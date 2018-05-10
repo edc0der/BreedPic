@@ -10,11 +10,15 @@ import UIKit
 
 class MainTabBarVC: UITabBarController {
 
+    private let client = APIClient()
+    private var masterBreedList = [Breed]()
+    private var dataSourceBreeds = [Breed]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         guard let user = SessionManager.shared.currentUser else {
-            //should return to login?
+            SessionManager.shared.pushLoginScreen()
             return
         }
         if !user.hasSeenOnboarding {
@@ -23,6 +27,15 @@ class MainTabBarVC: UITabBarController {
             navigationController?.present(viewController, animated: true, completion: nil)
         }
 
+        client.getBreedList { (breeds) in
+            self.masterBreedList = breeds
+            randomizeArray(&self.masterBreedList)
+        }
+
+        setupTabItems()
+    }
+
+    func setupTabItems() -> Void {
         let vcFavoriteCategories = FavoriteCategoriesVC(nibName: String.className(target: FavoriteCategoriesVC.self), bundle: nil)
         let vcFavoritePictures = FavoritePicturesVC(nibName: String.className(target: FavoritePicturesVC.self), bundle: nil)
         let vcSettings = SettingsVC(nibName: String.className(target: SettingsVC.self), bundle: nil)
@@ -32,12 +45,6 @@ class MainTabBarVC: UITabBarController {
         vcSettings.tabBarItem = UITabBarItem(title: .settingsItem, image: #imageLiteral(resourceName: "settings"), tag: 2)
 
         viewControllers = [vcFavoriteCategories, vcFavoritePictures, vcSettings]
-
-        if user.hasFavoriteBreeds() {
-            selectedViewController = viewControllers?.first
-        } else {
-            selectedViewController = viewControllers?.last
-            //disable other tabs
-        }
+        selectedViewController = viewControllers?.first
     }
 }

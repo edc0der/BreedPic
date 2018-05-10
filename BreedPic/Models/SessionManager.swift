@@ -20,9 +20,12 @@ extension SessionManagerDelegate {
 
 class SessionManager: NSObject {
     static let shared = SessionManager()
+    private override init() {
+        super.init()
+        self.getUserFromDefaults()
+    }
 
-    private override init() { }
-
+    private let userKey = "CurrentUser"
     public var currentUser: UserProfile?
     public var delegate: SessionManagerDelegate?
     public var authToken: String?
@@ -32,7 +35,12 @@ class SessionManager: NSObject {
         GIDSignIn.sharedInstance().delegate = self
     }
 
-    public func presentLoginScreen(animated: Bool? = false) {
+//    public func presentLoginScreen(animated: Bool? = false) {
+//        let viewController = LoginVC(nibName: String.className(target: LoginVC.self), bundle: nil)
+//        viewController.setAsRoot()
+//    }
+
+    public func pushLoginScreen(animated: Bool? = false) {
         let viewController = LoginVC(nibName: String.className(target: LoginVC.self), bundle: nil)
         viewController.setAsRoot()
     }
@@ -54,7 +62,25 @@ class SessionManager: NSObject {
 
     func logOut() -> Void {
         GIDSignIn.sharedInstance().signOut()
-        presentLoginScreen()
+        pushLoginScreen()
+//        presentLoginScreen()
+    }
+
+    func persistCurrentUser() -> Void {
+        if let user = currentUser, let userData = user.safeEncode() {
+            UserDefaults.standard.set(userData, forKey: userKey)
+        }
+    }
+
+    private func getUserFromDefaults() -> Void {
+        if let userData = UserDefaults.standard.data(forKey: userKey) {
+            do {
+                let decoder = JSONDecoder()
+                currentUser = try decoder.decode(UserProfile.self, from: userData)
+            } catch let error {
+                print("\(error.localizedDescription)")
+            }
+        }
     }
 }
 
@@ -66,7 +92,9 @@ extension SessionManager: GIDSignInDelegate {
         } else {
             let id = ID(name: "user.userID", value: user.userID)
             let name = Name(firstName: user.profile.givenName, lastName: user.profile.familyName)
-            let pictures = Picture(thumbnailURL: user.profile.imageURL(withDimension: PictureSize.small.rawValue), mediumURL: user.profile.imageURL(withDimension: PictureSize.medium.rawValue), largeURL: user.profile.imageURL(withDimension: PictureSize.large.rawValue))
+            let pictures = Picture(thumbnailURL: user.profile.imageURL(withDimension: Picture.PictureSize.small.rawValue),
+                                   mediumURL: user.profile.imageURL(withDimension: Picture.PictureSize.medium.rawValue),
+                                   largeURL: user.profile.imageURL(withDimension: Picture.PictureSize.large.rawValue))
 
             currentUser = UserProfile(id: id,  name: name, picture: pictures, email: user.profile.email)
             authToken = user.authentication.idToken

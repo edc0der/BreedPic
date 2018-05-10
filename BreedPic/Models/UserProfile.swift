@@ -8,12 +8,6 @@
 
 import Foundation
 
-enum PictureSize: UInt {
-    case large = 128
-    case medium = 72
-    case small = 48
-}
-
 class BaseUserResult: Codable {
     var results: [UserProfile]?
     var info: Info?
@@ -29,15 +23,12 @@ class UserProfile: Codable {
     var id: ID?
     var name: Name?
     var picture: Picture?
-    var gender: String?
     var email: String?
-    var phone, cell: String?
-    var location: Location?
-    var nat: String?
-    var login: Login?
-    var dob, registered: String?
-    var hasSeenOnboarding = false
-
+    var hasSeenOnboarding = false {
+        didSet {
+            SessionManager.shared.persistCurrentUser()
+        }
+    }
     var favoriteBreeds = [Breed]()
     var favoritePictures = [String]()
 
@@ -52,7 +43,17 @@ class UserProfile: Codable {
     }
 
     private enum CodingKeys: String, CodingKey {
-        case id, name, picture, gender, email, phone, cell, location, nat, login, dob, registered
+        case id, name, picture, email, hasSeenOnboarding
+    }
+
+    func safeEncode() -> Data? {
+        do {
+            let encoder = JSONEncoder()
+            return try encoder.encode(self)
+        } catch let error {
+            print("\(error.localizedDescription)")
+            return nil
+        }
     }
 }
 
@@ -64,20 +65,6 @@ class ID: Codable {
         self.name = name
         self.value = value
     }
-}
-
-class Location: Codable {
-    var street, city, state: String?
-    var postcode: Int?
-
-    private enum CodingKeys: String, CodingKey {
-        case street, city, state
-    }
-}
-
-class Login: Codable {
-    var username, password: String?
-    var sha1, sha256, salt, md5: String?
 }
 
 class Name: Codable {
@@ -97,5 +84,11 @@ class Picture: Codable {
         thumbnail = thumbnailURL
         medium = mediumURL
         large = largeURL
+    }
+
+    enum PictureSize: UInt {
+        case large = 128
+        case medium = 72
+        case small = 48
     }
 }

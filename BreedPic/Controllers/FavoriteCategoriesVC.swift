@@ -7,26 +7,41 @@
 //
 
 import UIKit
+import Foundation
+
+class FavoriteCategoriesVCViewModel: NSObject {
+    var imagesList: [String]?
+    let client = APIClient()
+
+    func fetchImages() -> Void {
+        client.getRandomImages { (list) in
+            self.imagesList = list
+        }
+    }
+}
 
 class FavoriteCategoriesVC: UIViewController {
 
-    @IBOutlet private weak var tvPictures: UITableView!
+    @IBOutlet private weak var cvPictures: UITableView!
+    var viewModel = FavoriteCategoriesVCViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.fetchImages()
     }
 }
 
-extension FavoriteCategoriesVC: UITableViewDelegate {
+// MARK: Datasource
+extension FavoriteCategoriesVC {
     
 }
 
-extension FavoriteCategoriesVC: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell(frame: .zero)
-    }
+// MARK: Delegate
+extension FavoriteCategoriesVC {
+
+}
+
+// MARK: Prefetch
+extension FavoriteCategoriesVC {
+
 }
