@@ -26,8 +26,8 @@ class MainTabBarVC: UITabBarController {
     }
 
     func setupTabItems() -> Void {
-        let vcFavoriteCategories = FavoriteCategoriesCollectionVC(nibName: String.className(target: FavoriteCategoriesCollectionVC.self), bundle: nil)
-        let vcFavoritePictures = FavoritePicturesVC(nibName: String.className(target: FavoritePicturesVC.self), bundle: nil)
+        let vcFavoriteCategories = FeedTableViewController(nibName: String.className(target: FeedTableViewController.self), bundle: nil)
+        let vcFavoritePictures = FavoritesCollectionViewController(nibName: String.className(target: FavoritesCollectionViewController.self), bundle: nil)
         let vcSettings = SettingsVC(nibName: String.className(target: SettingsVC.self), bundle: nil)
 
         vcFavoriteCategories.tabBarItem = UITabBarItem(title: .feedItem, image: #imageLiteral(resourceName: "search"), tag: 0)
