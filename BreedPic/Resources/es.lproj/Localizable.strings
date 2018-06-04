@@ -6,22 +6,7 @@
  Copyright © 2018 Eduard Moya. All rights reserved.
  */
 //Labels
-"label.how_it_works" = "Así funciona";
-"label.feed_tab" = "Descubre";
-"label.feed_description" = "Aquí encontrarás todas las fotos relacionadas a tus razas de perro favoritas.";
-"label.favorites_tab" = "Favoritas";
-"label.favorites_description" = "Como su nombre lo indíca, acá encontraras tus fotos favoritas.";
-"label.settings_tab" = "Ajustes";
-"label.settings_description" = "Esta pestaña te permite configurar tus razas favoritas cuando gustes.";
-"label.what_to_do" = "Aqui puedes...";
-"label.fav_that_image" = "Marca como favorito";
-"label.fav_that_image_description" = "Marca las fotos de los perros que amas.";
-"label.download_image" = "Descarga";
-"label.download_image_description" = "Guarda los perros en tu teléfono.";
-"label.share_it" = "Comparte";
-"label.share_it_description" = "Comparte fotos con tus contactos.";
 
 //Tab Items
 "tabbar_item.feed" = "Descubre";
 "tabbar_item.favorites" = "Favoritas";
-"tabbar_item.settings" = "Ajustes";

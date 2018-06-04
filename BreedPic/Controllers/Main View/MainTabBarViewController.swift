@@ -27,15 +27,13 @@ class MainTabBarViewController: UITabBarController {
         //create tab bar items/ViewControllers
         let vcFavoriteCategories: BreedFeedTableViewController = BreedFeedTableViewController.loadFromNib()
         let vcFavoritePictures: FavoritesCollectionViewController = FavoritesCollectionViewController.loadFromNib()
-        let vcSettings: SettingsVC = SettingsVC.loadFromNib()
 
         //set tab items' name, icon and tag
         vcFavoriteCategories.tabBarItem = UITabBarItem(title: .feedItem, image: #imageLiteral(resourceName: "search"), tag: 0)
         vcFavoritePictures.tabBarItem = UITabBarItem(title: .favoritesItem, image: #imageLiteral(resourceName: "tickBox"), tag: 1)
-        vcSettings.tabBarItem = UITabBarItem(title: .settingsItem, image: #imageLiteral(resourceName: "settings"), tag: 2)
 
         //set items to tab bar controller and select default tab
-        viewControllers = [vcFavoriteCategories, vcFavoritePictures, vcSettings]
+        viewControllers = [vcFavoriteCategories, vcFavoritePictures]
         selectedViewController = viewControllers?.first
     }
 }

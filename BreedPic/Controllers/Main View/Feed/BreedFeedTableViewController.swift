@@ -15,7 +15,7 @@ class BreedFeedTableViewController: PTTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib.init(nibName: "BreedFeedTableViewCell", bundle: nil), forCellReuseIdentifier: "ParallaxCell")
+        tableView.register(UINib(nibName: BreedFeedTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: "ParallaxCell")
         viewModel.fetchImages { (success) in
             if success {
                 self.tableView.reloadData()
@@ -58,10 +58,9 @@ extension BreedFeedTableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let viewController: BreedPictureViewController = BreedPictureViewController.loadFromNib()
+        let viewController = BreedPictureViewController()
         UIView.animate(withDuration: 0.3) {
             self.pushViewController(viewController)
         }
-
     }
 }

@@ -17,18 +17,12 @@ class BreedFeedTableViewCell: ParallaxCell, NibLoadableView, ReusableView {
         super.awakeFromNib()
     }
 
-    override func prepareForReuse() {
-        super.prepareForReuse()
-    }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
 
     func configure(withViewModel: FeedTableViewCellViewModel) -> Void {
-        //set viewModel
         viewModel = withViewModel
-        //fill cell with viewModel data
         configureCell()
     }
 

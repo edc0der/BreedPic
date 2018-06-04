@@ -22,5 +22,4 @@ extension String {
 extension String {
     static let feedItem = "tabbar_item.feed".localized
     static let favoritesItem = "tabbar_item.favorites".localized
-    static let settingsItem = "tabbar_item.settings".localized
 }

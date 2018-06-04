@@ -6,22 +6,7 @@
   Copyright © 2018 Eduard Moya. All rights reserved.
 */
 //Labels
-"label.how_it_works" = "How it works";
-"label.feed_tab" = "Feed tab";
-"label.feed_description" = "In here you will find a \"timeline\" of pictures related to your favorite dog breeds.";
-"label.favorites_tab" = "Favorites tab";
-"label.favorites_description" = "As the name indicates, in here you'll have your favorite pics.";
-"label.settings_tab" = "Settings tab";
-"label.settings_description" = "This tab allows you to configure your favorite breeds any time you like.";
-"label.what_to_do" = "You can...";
-"label.fav_that_image" = "Favorite";
-"label.fav_that_image_description" = "Tick the pics of pups you love.";
-"label.download_image" = "Download";
-"label.download_image_description" = "Save the dogs to your phone.";
-"label.share_it" = "Share";
-"label.share_it_description" = "Share to your contacts";
 
 //Tab Items
 "tabbar_item.feed" = "Feed";
 "tabbar_item.favorites" = "Favorites";
-"tabbar_item.settings" = "Settings";

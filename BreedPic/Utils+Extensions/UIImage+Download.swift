@@ -3,7 +3,7 @@
 //  BreedPic
 //
 //  Created by Eduard Moya on 5/10/18.
-//  Copyright © 2018 Eduard Moya. All rights reserved.
+//  Copyright © 2017 Andrea Prearo. All rights reserved.
 //
 
 import UIKit
