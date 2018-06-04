@@ -8,24 +8,61 @@
 
 import UIKit
 
+protocol FeedTableViewCellViewModelDataSource {
+    var name: String { get }
+    var imageURL: String { get }
+    var image: UIImage? { get }
+}
+
+protocol FeedTableViewCellViewModelDelegate {
+    func loadImage(completion: @escaping () -> Void) -> Void
+    func cancelImageLoad() -> Void
+}
+
 class FeedTableViewCellViewModel: NSObject {
     //Properties
-    let urlString: String
+    private let breed: Breed!
+    private var _image: UIImage?
+    private var imageDownloadTask: URLSessionDataTask?
 
-    //Completion closure
-    typealias LoadImageCompletion = (UIImage?) -> Void
+    init(withBreed breed: Breed) {
+        self.breed = breed
+    }
+}
 
-    init(url: String) {
-        urlString = url
+extension FeedTableViewCellViewModel: FeedTableViewCellViewModelDataSource {
+
+    var name: String {
+        return breed.name
     }
 
-    func loadImage(completion: @escaping LoadImageCompletion) -> Void {
-        UIImage.downloadImageFromUrl(urlString) { (image) in
-            guard let image = image else {
-                completion(nil)
-                return
+    var imageURL: String {
+        return breed.imageURL
+    }
+
+    var image: UIImage? {
+        return _image
+    }
+}
+
+extension FeedTableViewCellViewModel: FeedTableViewCellViewModelDelegate {
+
+    func loadImage(completion: @escaping () -> Void) {
+        if let _ = _image {
+            completion()
+        } else {
+            imageDownloadTask = UIImage.downloadImageFromUrl(breed.imageURL) { (image) in
+                guard let image = image else {
+                    completion()
+                    return
+                }
+                self._image = image
+                completion()
             }
-            completion(image)
         }
+    }
+
+    func cancelImageLoad() {
+        imageDownloadTask?.cancel()
     }
 }

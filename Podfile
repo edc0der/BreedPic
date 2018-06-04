@@ -4,8 +4,8 @@ target 'BreedPic' do
   use_frameworks!
 
   # Pods for BreedPic
-  pod 'Moya/RxSwift', '~> 11.0'
-  pod 'GoogleSignIn'
+  pod 'Moya', '~> 11.0'
+  pod 'PreviewTransition'
 
   target 'BreedPicTests' do
     inherit! :search_paths

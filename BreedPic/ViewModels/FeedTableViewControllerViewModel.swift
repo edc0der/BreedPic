@@ -8,6 +8,11 @@
 
 import Foundation
 
+protocol FeedTableViewControllerViewModelDataSource {
+    var count: Int { get }
+    func viewModel(atRow row: Int) -> FeedTableViewCellViewModel
+}
+
 class FeedTableViewControllerViewModel: NSObject {
     //Properties
     var imagesList = [FeedTableViewCellViewModel]()
@@ -18,12 +23,14 @@ class FeedTableViewControllerViewModel: NSObject {
 
     func fetchImages(completion: @escaping FetchCompletion) -> Void {
         client.getRandomImages { (list) in
-            self.imagesList.append(contentsOf: list.map { FeedTableViewCellViewModel(url: $0)})
+            self.imagesList.append(contentsOf: list.map { FeedTableViewCellViewModel(withBreed: $0)})
             completion(true)//assert failure cases
         }
     }
+}
 
-    func imagesCount() -> Int {
+extension FeedTableViewControllerViewModel: FeedTableViewControllerViewModelDataSource {
+    var count: Int {
         return imagesList.count
     }
 

@@ -22,14 +22,33 @@ class Breed {
             }
         }
     }
-    public var imagesURLs = [String]()
+    public private(set) var imageURL: String! {
+        didSet {
+            if !imageURL.isEmpty {
+                let urlComponents = imageURL.split(separator: "/")
+                let breedNameIndex = urlComponents.count - 2
 
-    init(name: String) {
-        setName(newName: name)
+                if 0...(urlComponents.count - 1) ~= breedNameIndex {
+                    let breedName = urlComponents[breedNameIndex].replacingOccurrences(of: "-", with: " ")
+                    name = breedName.capitalized
+                }
+            }
+        }
     }
 
-    //hack to call didSet on init
+    init(name: String) {
+        setName(newName: name) //hack to call didSet on init
+    }
+
+    init(url: String) {
+        setUrl(urlString: url) //hack to call didSet on init
+    }
+
     private func setName(newName: String) -> Void {
         self.name = newName
+    }
+
+    private func setUrl(urlString: String) -> Void {
+        self.imageURL = urlString
     }
 }

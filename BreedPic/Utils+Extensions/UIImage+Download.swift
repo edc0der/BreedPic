@@ -9,10 +9,10 @@
 import UIKit
 
 extension UIImage {
-    static func downloadImageFromUrl(_ url: String, completionHandler: @escaping (UIImage?) -> Void) {
+    static func downloadImageFromUrl(_ url: String, completionHandler: @escaping (UIImage?) -> Void) -> URLSessionDataTask? {
         guard let url = URL(string: url) else {
             completionHandler(nil)
-            return
+            return nil
         }
         let task: URLSessionDataTask = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) -> Void in
             guard let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
@@ -25,5 +25,6 @@ extension UIImage {
             completionHandler(image)
         })
         task.resume()
+        return task
     }
 }

@@ -60,7 +60,7 @@ class APIClient: NSObject {
         }
     }
 
-    func getRandomImages(completion: @escaping BreedImagesListCompletion) -> Void {
+    func getRandomImages(completion: @escaping BreedListCompletion) -> Void {
         provider.request(.getMultipleRandomImages(amount: 10)) { (result) in
             switch result {
                 case .success(let moyaResponse):
@@ -71,7 +71,7 @@ class APIClient: NSObject {
                             completion([])
                             return
                         }
-                        completion(list)
+                        completion(list.map { Breed(url: $0) })
                     } catch let error {
                         completion([])
                         print("\(error.localizedDescription)")
